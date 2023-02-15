@@ -16,3 +16,12 @@ services:
       - 8080:80
     depends_on:
       - back-end
+
+  db:
+    build: ./mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3306:3306"
