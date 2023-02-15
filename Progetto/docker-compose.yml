@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  back-end:
+    build: ./python
+    volumes:
+      - ./python:/usr/src/app
+    ports:
+      - 8001:80
+
+  front-end:
+    image: php:apache
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - 8000:80
+    depends_on:
+      - back-end
