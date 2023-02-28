@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web1:
+    image: nginx:alpine
+    networks:
+      - nt1
+  web2:
+    image: nginx:alpine
+    networks:
+      - nt2
+  web3:
+    image: nginx:alpine
+    networks:
+      - nt1
+      - nt2
+
+networks:
+  nt1:
+  nt2:
+    external: true
+

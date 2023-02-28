@@ -1,0 +1,8 @@
+services:
+  app:
+    image: app
+    ports:
+      - 8080:5000
+    build: 
+      context: .
+      dockerfile: Dockerfile

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  webserver:
+    image: nginx:alpine
+    expose:
+      - 80
+    labels:
+      - mainteiner="Gonz Docker"
+    ports:
+      - 8080:80
+    container_name: webserver
+    volumes:
+      - ./:/usr/share/nginx/html
+    
+    
